@@ -1,0 +1,90 @@
+@function vw($size, $w:750) {
+	@if $size != 0 {
+		$vw: ($size * 100 / $w);
+		$vw: floor($vw * 1000) / 1000;
+		@return $vw  + vw;
+	}
+	@return 0;
+}
+@function vw-pc($size, $w:1280) {
+	@if $size != 0 {
+		$vw: ($size * 100 / $w);
+		$vw: floor($vw * 1000) / 1000;
+		@return $vw  + vw;
+	}
+	@return 0;
+}
+@function vh($size, $w:800) {
+	@if $size != 0 {
+		$vw: ($size * 100 / $w);
+		$vw: floor($vw * 1000) / 1000;
+		@return $vw  + vh;
+	}
+	@return 0;
+}
+@function px($size:0) {
+	@if $size != 0 {
+		$w: ($size * 100);
+		$w: floor($w) / 100;
+		@return $w + px;
+	}
+	@return 0;
+}
+@function rem($size, $base:16) {
+	$rem: $size / $base;
+	$rem: floor($rem * 100) / 100;
+	@return $rem + rem;
+}
+
+@function per($n:0, $base:0) {
+	$per: ($n * 100 / $base);
+	$per: floor($per * 1000) / 1000;
+	@return $per + 0%;
+}
+
+@mixin media-pc() {
+	@media only screen and (min-width: #{$BP-PC}px) {
+		@content;
+	}
+}
+@mixin media-mid() {
+	@media only screen and (min-width: #{$BP-SP}px) and (max-width: #{$BP-MID}px) {
+		@content;
+	}
+}
+@mixin media-sp() {
+	@media only screen and (max-width: #{$BP-SP}px) {
+		@content;
+	}
+}
+@mixin media($min, $max:null) {
+	@if $max != null {
+		@media only screen and (min-width: #{$min}px) and (max-width: #{$max}px) {
+			@content;
+		}
+	}
+	@else {
+		@media only screen and (min-width: #{$min}px) {
+			@content;
+		}
+	}
+}
+
+
+@mixin text-justify() {
+	text-align: justify;
+	text-justify: inter-ideograph;
+}
+
+@mixin object-fit-cover() {
+	object-fit: cover;
+	font-family: 'object-fit: cover;';
+}
+
+@mixin pie-clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}

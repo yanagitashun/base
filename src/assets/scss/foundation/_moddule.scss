@@ -1,0 +1,26 @@
+@import "conf-vars";
+@import "conf-mixin";
+
+@include media-pc {
+	.sp {
+		display: none !important;
+	}
+	.br_sp {
+		display: none !important;
+	}
+	.br_pc {
+		display: block !important;
+	}
+}
+
+@include media-sp {
+	.pc {
+		display: none !important;
+	}
+	.br_sp {
+		display: block !important;
+	}
+	.br_pc {
+		display: none !important;
+	}
+}

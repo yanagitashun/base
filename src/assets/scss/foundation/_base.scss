@@ -1,0 +1,22 @@
+@import "conf-vars";
+@import "conf-mixin";
+
+html {
+  @include media-pc {
+    font-size: 16px;
+  }
+  @include media-sp {
+    font-size: vw(24);
+  }
+}
+
+body {
+  position: relative;
+  @include font-gothic($weight-lighter);
+  letter-spacing: 1px;
+  line-height: 1.5;
+  color: $color-main;
+  z-index: 1;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}

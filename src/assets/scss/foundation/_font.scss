@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500&display=swap&subset=japanese');
+@import url('https://fonts.googleapis.com/css?family=Abel&display=swap');
+
+@mixin font-gothic($weight:null) {
+	font-family: 'Noto Sans JP', "Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+	font-weight: $weight;
+}
+@mixin font-serif() {
+	font-family: 'Noto Serif JP', serif;
+}
+%font-gothic {
+	@include font-gothic();
+}
+%font-serif {
+	@include font-serif();
+}
